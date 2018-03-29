@@ -1,6 +1,7 @@
 package com.enva.model;
 
 public class User {
+    private Long userId;
     private String userName;
     private String password;
     private String email;
@@ -12,6 +13,14 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.email = email;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
@@ -41,7 +50,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userName='" + userName + '\'' +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';

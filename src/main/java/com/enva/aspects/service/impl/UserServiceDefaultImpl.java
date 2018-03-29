@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserServiceDefaultImpl implements UserService {
 
-    private final UserRepository userRepository;
+    private  UserRepository userRepository;
 
-    @Autowired
-    public UserServiceDefaultImpl(UserRepository userRepository) {
+    public UserServiceDefaultImpl() {};
+
+    public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
 
     public User getUserByName(String name) {
         return userRepository.getUserByName(name);
