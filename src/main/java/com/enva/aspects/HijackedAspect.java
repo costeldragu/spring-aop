@@ -17,6 +17,10 @@ public class HijackedAspect {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
+    @Pointcut("execution(* *(..))")
+    private void anyPublicOperation() {
+    }
+
     @Pointcut("execution(* com.enva.services.*Service.*(..))")
     private void service() {
     }//
@@ -51,5 +55,12 @@ public class HijackedAspect {
         LOGGER.info("Continue or stop this ?");
         return joinPoint.proceed();
 
+    }
+
+    @Around("anyPublicOperation()")
+    public Object doSometingHere(ProceedingJoinPoint joinPoint) throws Throwable {
+        //Continue or stop this ?
+        LOGGER.info("Continue or stop this for any public operation?");
+        return joinPoint.proceed();
     }
 }
