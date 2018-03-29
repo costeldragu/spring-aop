@@ -1,7 +1,7 @@
-package com.endava.repository.impl;
+package com.enva.repository.impl;
 
-import com.endava.model.User;
-import com.endava.repository.UserRepository;
+import com.enva.model.User;
+import com.enva.repository.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

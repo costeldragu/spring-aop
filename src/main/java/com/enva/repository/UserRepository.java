@@ -1,6 +1,6 @@
-package com.endava.repository;
+package com.enva.repository;
 
-import com.endava.model.User;
+import com.enva.model.User;
 
 public interface UserRepository {
 

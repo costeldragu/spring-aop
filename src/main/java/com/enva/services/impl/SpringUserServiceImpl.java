@@ -1,7 +1,7 @@
-package com.endava.services.impl;
+package com.enva.services.impl;
 
 
-import com.endava.services.SpringUserService;
+import com.enva.services.SpringUserService;
 import org.springframework.stereotype.Service;
 
 @Service("springUserService")

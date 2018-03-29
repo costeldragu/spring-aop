@@ -1,9 +1,9 @@
-package com.endava.aspects.service.impl;
+package com.enva.aspects.service.impl;
 
 
-import com.endava.aspects.service.UserService;
-import com.endava.model.User;
-import com.endava.repository.UserRepository;
+import com.enva.aspects.service.UserService;
+import com.enva.model.User;
+import com.enva.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserServiceDefaultImpl implements UserService {

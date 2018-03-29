@@ -1,6 +1,6 @@
-package com.endava.aspects.service;
+package com.enva.aspects.service;
 
-import com.endava.model.User;
+import com.enva.model.User;
 
 public interface UserService {
 

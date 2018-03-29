@@ -1,6 +1,6 @@
-package com.endava.aspects;
+package com.enva.aspects;
 
-import com.endava.Application;
+import com.enva.Application;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
@@ -17,27 +17,27 @@ public class HijackedAspect {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
-    @Pointcut("execution(* com.endava.services.*Service.*(..))")
+    @Pointcut("execution(* com.enva.services.*Service.*(..))")
     private void service() {
     }//
 
-    @Pointcut("execution(* com.endava.services.*Repository.*(..))")
+    @Pointcut("execution(* com.enva.services.*Repository.*(..))")
     private void repository() {
     }//
 
 
-    @Before("execution(* com.endava.services.*Service.*(..))")
+    @Before("execution(* com.enva.services.*Service.*(..))")
     public void doAccessCheck() {
         LOGGER.info("Check if you have access");
 
     }
 
-    @After("execution(* com.endava.services.*Service.*(..))")
+    @After("execution(* com.enva.services.*Service.*(..))")
     public void cleanUp() {
         LOGGER.info("Clean up ");
     }
 
-    @Around("execution(* com.endava.services.*Service.*(..))")
+    @Around("execution(* com.enva.services.*Service.*(..))")
     public Object doSometingHereForService(ProceedingJoinPoint joinPoint) throws Throwable {
         //Continue or stop this ?
         LOGGER.info("Continue or stop this ?");
@@ -45,7 +45,7 @@ public class HijackedAspect {
 
     }
 
-    @Around("execution(* com.endava.repository.*Repository.*(..))")
+    @Around("execution(* com.enva.repository.*Repository.*(..))")
     public Object doSometingHereForRepository(ProceedingJoinPoint joinPoint) throws Throwable {
         //Continue or stop this ?
         LOGGER.info("Continue or stop this ?");

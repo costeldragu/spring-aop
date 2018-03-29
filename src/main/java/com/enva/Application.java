@@ -1,10 +1,9 @@
-package com.endava;
+package com.enva;
 
 
-import com.endava.aspects.service.UserService;
-import com.endava.config.JavaConfig;
-import com.endava.model.User;
-import com.endava.repository.UserRepository;
+import com.enva.config.JavaConfig;
+import com.enva.model.User;
+import com.enva.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;

@@ -9,7 +9,7 @@
         </layout>
     </appender>
 
-    <logger name="com.endava" level="debug" additivity="false">
+    <logger name="com.enva" level="debug" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 
