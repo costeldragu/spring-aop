@@ -3,6 +3,8 @@ package com.enva.aspects;
 import com.enva.Application;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -41,6 +43,10 @@ public class HijackedAspect {
         LOGGER.info("Clean up ");
     }
 
+    @AfterThrowing
+
+    @AfterReturning
+
     @Around("execution(* com.enva.services.*Service.*(..))")
     public Object doSometingHereForService(ProceedingJoinPoint joinPoint) throws Throwable {
         //Continue or stop this ?
@@ -62,5 +68,19 @@ public class HijackedAspect {
         //Continue or stop this ?
         LOGGER.info("Continue or stop this for any public operation?");
         return joinPoint.proceed();
+    }
+
+    @AfterThrowing(
+            pointcut="execution(* com.enva.repository.impl.UserRepositoryImpl.getUserByName(..))",
+            throwing="ex")
+    public void doRecoveryActions(Exception ex) {
+
+    }
+
+    @AfterReturning(
+            pointcut="execution(* com.enva.repository.impl.UserRepositoryImpl.getUserByName(..))",
+            returning="retVal")
+    public void doAccessCheck(Object retVal) {
+        // ...
     }
 }
